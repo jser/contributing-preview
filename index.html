@@ -41,6 +41,11 @@
 
                 <p v-html="item.content | marked">
                 </p>
+                <ul  v-show="item.relatedLinks.length">
+                    <li v-repeat="item.relatedLinks">
+                        <a href="{{url}}">{{title}}</a>
+                    </li>
+                </ul>
                 <hr/>
             </article>
         </div>

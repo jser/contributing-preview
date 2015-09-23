@@ -18,9 +18,9 @@ var app = new Vue({
     el: '#js-app',
     data: {
         item: {
-            "title": "タイトルです",
+            "title": "サイトタイトル",
             "url": "http://example.com/",
-            "content": "コンテンツ",
+            "content": "説明文",
             "date": "2015-09-23T07:06:00.112Z",
             "tags": [
                 "tag"
