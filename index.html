@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSer.info contributing item preview</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/solarized_light.min.css">
+    <link rel="stylesheet" href="http://jser.info/public/css/index.css">
+    <style>
+        .edit {
+            border: solid #ddd 1px;
+        }
+
+        .edit-textarea {
+            padding: 0.2rem 0;
+            width: 100%;
+            height: 30rem;
+        }
+    </style>
+</head>
+<body>
+<div id="js-app">
+    <div class="page-content">
+        <div class="post">
+            <article class="post-content">
+                <h1 class="site-genre">ヘッドライン</h1>
+                <hr/>
+                <h2>{{item.title}}</h2>
+
+                <p>
+                    <a href="{{item.url}}" title="{{item.title}}">{{item.url | ttp}}</a>
+                </p>
+
+                <p class="jser-tags jser-tag-icon">
+                    <span class="jser-tag" v-repeat="item.tags">
+                        {{$value}}
+                    </span>
+                </p>
+
+                <p v-html="item.content | marked">
+                </p>
+                <hr/>
+            </article>
+        </div>
+        <div class="edit">
+            <textarea class="edit-textarea" v-model="item | json 4">
+            </textarea>
+            <button v-on="click: storeItem">Save to permanent link</button>
+        </div>
+    </div>
+</div>
+<script src="build.js"></script>
+</body>
+</html>
