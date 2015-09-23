@@ -20,7 +20,8 @@
   "scripts": {
     "build": "browserify -t babelify src/app.js -o build.js",
     "watch": "watchify -t babelify src/app.js -o build.js",
-    "prepublish": "npm run --if-present build"
+    "prepublish": "npm run --if-present build",
+    "deploy": "npm run build && gh-pages-deploy-sh 'dist/**/*'"
   },
   "keywords": [
     "jser.info"
