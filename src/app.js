@@ -39,7 +39,14 @@ var app = new Vue({
         }
     },
     filters: {
-        marked: marked
+        marked: function (content) {
+            try {
+                return marked(content);
+            } catch (e) {
+                console.log(e);
+            }
+            return content;
+        }
     }
 });
 
