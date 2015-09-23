@@ -20,7 +20,7 @@
   "scripts": {
     "build": "browserify -t babelify src/app.js -o build.js",
     "watch": "watchify -t babelify src/app.js -o build.js",
-    "prepublish":"npm run --if-present build"
+    "prepublish": "npm run --if-present build"
   },
   "keywords": [
     "jser.info"
@@ -29,6 +29,7 @@
     "babel": "^5.8.23",
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
+    "gh-pages-deploy-sh": "^1.2.7",
     "watchify": "^3.4.0"
   },
   "dependencies": {
