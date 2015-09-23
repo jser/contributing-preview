@@ -1,18 +1,18 @@
 {
-  "name": "contributing-prewview",
+  "name": "contributing-preview",
   "repository": {
     "type": "git",
-    "url": "https://github.com/azu/contributing-prewview.git"
+    "url": "https://github.com/azu/contributing-preview.git"
   },
   "author": "azu",
   "email": "azuciao@gmail.com",
-  "homepage": "https://github.com/azu/contributing-prewview",
+  "homepage": "https://github.com/azu/contributing-preview",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/azu/contributing-prewview/issues"
+    "url": "https://github.com/azu/contributing-preview/issues"
   },
   "version": "1.0.0",
-  "description": "prewview tool for jser.info item.",
+  "description": "preview tool for jser.info item.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -21,7 +21,7 @@
     "build": "browserify -t babelify src/app.js -o build.js",
     "watch": "watchify -t babelify src/app.js -o build.js",
     "prepublish": "npm run --if-present build",
-    "deploy": "npm run build && gh-pages-deploy-sh 'dist/**/*'"
+    "deploy": "npm run build && gh-pages-deploy-sh ./"
   },
   "keywords": [
     "jser.info"
