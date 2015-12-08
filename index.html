@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>JSer.info contributing item preview</title>
@@ -45,16 +45,16 @@
                 </p>
 
                 <p class="jser-tags jser-tag-icon">
-                    <span class="jser-tag" v-repeat="item.tags">
-                        {{$value}}
+                    <span class="jser-tag" v-for="value in item.tags">
+                        {{value}}
                     </span>
                 </p>
 
                 <p v-html="item.content | marked">
                 </p>
                 <ul v-show="item.relatedLinks.length">
-                    <li v-repeat="item.relatedLinks">
-                        <a href="{{url}}">{{title}}</a>
+                    <li v-for="item in item.relatedLinks">
+                        <a href="{{item.url}}">{{item.title}}</a>
                     </li>
                 </ul>
                 <hr/>
@@ -63,7 +63,7 @@
         <div class="edit">
             <textarea class="edit-textarea" v-model="item | json 4">
             </textarea>
-            <button class="edit-save" v-on="click: storeItem">Save as URL</button>
+            <button class="edit-save" v-on:click="storeItem">Save as URL</button>
         </div>
     </div>
 </div>

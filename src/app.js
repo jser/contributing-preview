@@ -43,7 +43,6 @@ var app = new Vue({
             try {
                 return marked(content);
             } catch (e) {
-                console.log(e);
             }
             return content;
         }

@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "browserify -t babelify src/app.js -o build.js",
-    "watch": "watchify -t babelify src/app.js -o build.js",
+    "watch": "watchify -d -v -t babelify src/app.js -o build.js",
     "prepublish": "npm run --if-present build",
     "deploy": "npm run build && gh-pages-deploy-sh ./"
   },
@@ -34,6 +34,6 @@
     "watchify": "^3.4.0"
   },
   "dependencies": {
-    "vue": "^0.12.15"
+    "vue": "^1.0.10"
   }
 }
